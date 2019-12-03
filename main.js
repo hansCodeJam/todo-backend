@@ -44,25 +44,26 @@ const twoPileSort = function() {
  * HELPER FUNCTIONS *
  ********************/
 
-const getTodoName = function(name) {
-  return name.text;
+const getTodoName = function(arr) {
+  return arr.text;
 }
 
-const getCompleteness = function () {
-  return name.complete;
+const getCompleteness = function (arr) {
+  return arr.complete;
 }
 
-const getPriority = function () {
-  return name.priority;
+const getPriority = function (arr) {
+  return arr.priority;
 }
 
-const isComplete = function() {
-  
+const isComplete = function(arr) {
+  return arr.complete;
 }
 
-const isHighPriority = function() {
-  
-}
+const isHighPriority = function(arr) {
+  let objectValue = Object.values(arr)
+  return arr.filter(objectValue === 2)
+  }
 
 
 
@@ -70,8 +71,8 @@ const isHighPriority = function() {
  * ITERATION FUNCTIONS *
  ***********************/
 
-const names = function() {
-
+const names = function(todo) {
+     
 }
 
 const namesAndPriorities = function() {
