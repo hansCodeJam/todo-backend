@@ -35,7 +35,6 @@ const filter = function(element, callBack) {
 }
 
 const twoPileSort = function() {
-  
 }
 
 
