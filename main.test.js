@@ -271,8 +271,8 @@ describe('isHighPriority', () => {
 
 describe('names', () => {
   it(`returns an array of the given todos names`, () => {
-    expect(names(todos)).toBe([
-      'Christmas shopping',
+    expect(names(todos)).toEqual([
+    'Christmas shopping',
       `make doctor's appointment`,
       'binge watch The Office',
       'research dinosaurs',
@@ -289,7 +289,7 @@ describe('names', () => {
 
 describe('namesAndPriorities', () => {
   it(`returns an array of the string containing the given todos name and priority`, () => {
-    expect(namesAndPriorities(todos)).toBe([
+    expect(namesAndPriorities(todos)).toEqual([
       'Christmas shopping - Low',
       `make doctor's appointment - High`,
       'binge watch The Office - High',
