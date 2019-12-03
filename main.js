@@ -12,12 +12,26 @@ They'll also become easier later once you've written a few of the iteration func
 
 */
 
-const map = function() {
+const map = function(element, callBack) {
+  const array = []
 
+  for(item of element) {
+    array.push(callBack(item))
+  }
+
+  return array;
 }
 
-const filter = function() {
+const filter = function(element, callBack) {
+  const array = []
 
+  for(item of element) {
+    if(callBack(item)) {
+      array.push(item)
+    }
+  }
+
+  return array;
 }
 
 const twoPileSort = function() {
@@ -30,16 +44,16 @@ const twoPileSort = function() {
  * HELPER FUNCTIONS *
  ********************/
 
-const getTodoName = function() {
-
+const getTodoName = function(name) {
+  return name.text;
 }
 
 const getCompleteness = function () {
-  
+  return name.complete;
 }
 
 const getPriority = function () {
-  
+  return name.priority;
 }
 
 const isComplete = function() {
