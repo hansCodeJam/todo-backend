@@ -95,37 +95,23 @@ const namesAndPriorities = todos => {
   
 }
 
-const justNotComplete = todos => {
-    const newArray = []
+const justNotComplete = todos => filter(todos, isNotComplete)
+// const justNotComplete = todos => {
+//     const newArray = []
 
-    todos.forEach(todo => !todo.complete ? newArray.push(todo) : '')
+//     todos.forEach(todo => !todo.complete ? newArray.push(todo) : '')
     
-    return newArray;
-}
+//     return newArray;
+// }
 
-const justComplete = todos => {
-  const newArray = []
+const justComplete = todos => filter(todos, isComplete)
 
-  todos.forEach(todo => todo.complete ? newArray.push(todo) : '') 
-  
-  return newArray;
-}
 
-const priority2Only = todos => {
-  const newArray = []
+const priority2Only = todos => filter(todos, isHighPriority)
 
-  todos.forEach(todo => todo.priority === 2 ? newArray.push(todo) : '') 
-  
-  return newArray;
-}
 
-const priority1Only = todos => {
-  const newArray = []
+const priority1Only = todos => filter(todos, isLowPriority)
 
-  todos.forEach(todo => todo.priority === 1 ? newArray.push(todo) : '') 
-  
-  return newArray;
-}
 
 const notCompleteFirst = todos => {
   const newArray = []
@@ -135,13 +121,15 @@ const notCompleteFirst = todos => {
   return newArray;
 }
 
-const priority2First = todos => {
-  const newArray = []
+const priority2First = todos => twoPileSort(todos, isHighPriority)
 
-  todos.forEach(todo => todo.priority === 2 ? newArray.unshift(todo) : newArray.push(todo)) 
+// const priority2First = todos => {
+//   const newArray = []
+
+//   todos.forEach(todo => todo.priority === 2 ? newArray.unshift(todo) : newArray.push(todo)) 
   
-  return newArray;
-}
+//   return newArray;
+// }
 
 
 
