@@ -20,6 +20,9 @@ const map = function(element, callBack) {
   }
 
   return newArray;
+
+
+  
 }
 
 const filter = function(element, callBack) {
@@ -34,10 +37,20 @@ const filter = function(element, callBack) {
   return newArray;
 }
 
-const twoPileSort = function() {
+const twoPileSort = function(arr, test) {
+  const sorted = [];
+
+  arr.forEach(function(element){
+    if(test(element)) {
+      sorted.unshift(element)
+    } else {
+      sorted.push(element)
+    }
+  })
+
+  return sorted;
+
 }
-
-
 
 /********************
  * HELPER FUNCTIONS *
@@ -61,7 +74,7 @@ const isComplete = function(arr) {
 
 const isHighPriority = function(arr) {
   return arr.priority === 2;
-  }
+}
 
 
 
@@ -135,7 +148,7 @@ const notCompleteFirst = function(todos) {
 const priority2First = function(todos) {
   const newArray = []
 
-  todos.forEach(todo => isHighPriorityq(todo) ? newArray.unshift(todo) : newArray.push(todo))
+  todos.forEach(todo => isHighPriority(todo) ? newArray.unshift(todo) : newArray.push(todo))
 
   return newArray;
 }
