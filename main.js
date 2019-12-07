@@ -77,15 +77,8 @@ const isHighPriority = arr => arr.priority === 2;
  * ITERATION FUNCTIONS *
  ***********************/
 
-const names = todos => {
-    const newArray = [];
-
-    todos.forEach(todo => newArray.push(getTodoName(todo)))
+const names = todos => todos.map(todo => todo.text)
     
-    return newArray;
-
-}
-
 const namesAndPriorities = todos => {
     const newArray = [];
     
